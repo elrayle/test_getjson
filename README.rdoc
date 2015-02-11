@@ -1,12 +1,12 @@
 == README
 
-To test:
+=== To test:
 
 * from http://localhost:3000/books add at least one book
 * TEST:  http://localhost:3000/books/1
 
 
-Classes of interest:
+=== Classes of interest:
 
 * app/controllers/book_metadata_controller.rb
   route #metadata sets up metadata (hardcoded) and uses json view to produce json
@@ -15,7 +15,10 @@ Classes of interest:
 * lib/fetch_metadata.rb
   * calls book_metadata_controller's #metadata route to get the json -- FAILS
 
+=== Approaches
+
 lib/fetch_metadata.rb tests multiple approaches to calling book_metadata_controller#metadata to get the json.  None work.
+
 * Net::HTTP - direct calls
 * Net::HTTP using HTTParty gem
 * Curl using Curb gem
