@@ -2,7 +2,7 @@
 
 === Goal:
 
-* Have controller A (BooksController) call a Class method in another class (FetchMetadata) which calls another controller (BookMetadataController) to get json
+* Have a controller (BooksController) call a Class method in another class (FetchMetadata) which calls another controller (BookMetadataController) to get json
 
 
 === To test:
