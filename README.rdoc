@@ -29,5 +29,19 @@ lib/fetch_metadata.rb tests multiple approaches to calling book_metadata_control
 * Curl using Curb gem
 * several attempts to use Rails Dispatch
 
-NOTE: Net::HTTP and Curl time out.  Curl with the same URL in the terminal returns json within a second.
+
+=== Observations
+
+==== Observation #1
+
+Net::HTTP and Curl time out from within the app.  Curl with the same URL in the terminal returns json within a second.
+
+So... BookMetadataController is callable via Curl
+
+
+==== Observation #2
+
+After the timeout of Curl, BookMetadataController.metadata is called twice.  The json is never returned to FetchMetadata.do_fetch because the timeout has already thrown an exception in that method.
+
+So...  Guessing that the call to the second route waits for the first route to complete before executing.  Not at all sure why the second route is called twice.
 

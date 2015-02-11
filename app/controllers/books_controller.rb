@@ -12,7 +12,8 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
-    FetchMetadata.do_fetch( params[:id] )
+    @metadata_json = FetchMetadata.do_fetch( params[:id] )
+    @book
   end
 
   # GET /books/new
