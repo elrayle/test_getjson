@@ -1,5 +1,10 @@
 == README
 
+=== Goal:
+
+* Have controller A (BooksController) call a Class method in another class (FetchMetadata) which calls another controller (BookMetadataController) to get json
+
+
 === To test:
 
 * from http://localhost:3000/books add at least one book
@@ -9,7 +14,7 @@
 === Classes of interest:
 
 * app/controllers/book_metadata_controller.rb
-  route #metadata sets up metadata (hardcoded) and uses json view to produce json
+  * route #metadata sets up metadata (hardcoded) and uses json view to produce json
 * app/controllers/books_controller.rb
   * route #show calls fetch_metadata and wants to receive back the metadata json
 * lib/fetch_metadata.rb
