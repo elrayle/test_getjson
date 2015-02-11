@@ -14,11 +14,11 @@
 === Classes of interest:
 
 * app/controllers/book_metadata_controller.rb
-  * route #metadata sets up metadata (hardcoded) and uses json view to produce json
+  * action #metadata sets up metadata (hardcoded) and uses json view to produce json
 * app/controllers/books_controller.rb
-  * route #show calls fetch_metadata and wants to receive back the metadata json
+  * action #show calls fetch_metadata and wants to receive back the metadata json
 * lib/fetch_metadata.rb
-  * calls book_metadata_controller's #metadata route to get the json -- FAILS
+  * calls book_metadata_controller's #metadata action to get the json -- FAILS
 
 === Approaches
 
