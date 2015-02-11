@@ -42,3 +42,6 @@ gem 'pry'
 gem 'pry-byebug'
 
 gem 'font-awesome-rails'
+
+gem 'httparty'
+gem 'curb'

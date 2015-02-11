@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  get 'metadata/:id', to: 'book_metadata#metadata', as: 'metadata'
+
+
   resources :pages
 
   resources :books

@@ -1,28 +1,25 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To test:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* from http://localhost:3000/books add at least one book
+* TEST:  http://localhost:3000/books/1
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Classes of interest:
+
+* app/controllers/book_metadata_controller.rb
+ * route #metadata sets up metadata (hardcoded) and uses json view to produce json
+* app/controllers/books_controller.rb
+ * route #show calls fetch_metadata and wants to receive back the metadata json
+* lib/fetch_metadata.rb
+ * calls book_metadata_controller's #metadata route to get the json -- FAILS
+
+lib/fetch_metadata.rb tests multiple approaches to calling book_metadata_controller#metadata to get the json.  None work.
+* Net::HTTP - direct calls
+* Net::HTTP using HTTParty gem
+* Curl using Curb gem
+* several attempts to use Rails Dispatch
+
+NOTE: Net::HTTP and Curl time out.  Curl with the same URL in the terminal returns json within a second.
+

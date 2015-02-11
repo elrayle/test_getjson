@@ -42,12 +42,16 @@ GEM
       execjs
     coffee-script-source (1.8.0)
     columnize (0.9.0)
+    curb (0.8.6)
     debugger-linecache (1.2.0)
     erubis (2.7.0)
     execjs (2.2.2)
     font-awesome-rails (4.3.0.0)
       railties (>= 3.2, < 5.0)
     hike (1.2.3)
+    httparty (0.13.3)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     jbuilder (2.2.6)
       activesupport (>= 3.0.0, < 5)
@@ -62,6 +66,7 @@ GEM
     mime-types (2.4.3)
     minitest (5.5.1)
     multi_json (1.10.1)
+    multi_xml (0.5.5)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -127,7 +132,9 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  curb
   font-awesome-rails
+  httparty
   jbuilder (~> 2.0)
   jquery-rails
   pry

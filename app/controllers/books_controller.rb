@@ -1,4 +1,5 @@
 require 'pry'
+require 'fetch_metadata'
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
@@ -11,6 +12,7 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
+    FetchMetadata.do_fetch( params[:id] )
   end
 
   # GET /books/new
